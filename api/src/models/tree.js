@@ -37,6 +37,39 @@ class Tree {
             return {msgError : "Error en la conexion a la base de datos!!"}
         }
     }
+    async getComments(){
+        const sql = 'select * from roket.comentarios'
+        try {
+            const client = await conn.getConn().connect();
+            // resultado de la peticion a la base de datos
+            const result = await client.query(sql)
+            // termino de cenxion 
+            client.release()
+            //retornamos los datos 
+            return result.rows
+        } catch (error) {
+            console.error(error);
+            // retornamos el error 
+            return {msgError : "Error en la conexion a la base de datos!!"}
+        }
+    }
+    async addComments(request){
+        console.log(request);
+        const sql = 'insert into roket.comentarios (arbol_id, postulante_id, comentario) values ($1,$2,$3);'
+        try {
+            const client = await conn.getConn().connect();
+            // resultado de la peticion a la base de datos
+            const result = await client.query(sql,[request.arbol_id,request.postulante_id,request.comentario])
+            // termino de cenxion 
+            client.release()
+            //retornamos los datos 
+            return result.rows
+        } catch (error) {
+            console.error(error);
+            // retornamos el error 
+            return {msgError : "Error en la conexion a la base de datos!!"}
+        }
+    }
 }
 
 module.exports = Tree

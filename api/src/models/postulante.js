@@ -5,14 +5,13 @@ const conn = new Conect()
 class Postulante {
     //funcion asincrona que ingresa al postulante.
     async addPostulante(){
-        //consulta sql 
+        //consulta sql con los datos para la postulacion estos se envian solo una ves. 
         const sql = "insert into roket.postulantes (postulante_id, nombre, apellido, ciudad, linkedin, guthub_tarea, telefono, otras_referencias) values ('19041505-8','Francisco Javier','Garay Molina','Coquimbo','https://www.linkedin.com/in/francisco-garay-3b417715b/','https://github.com/garay21/Tarea-Roket','+56 9 30392238','https://franciscogaray.itch.io/subwarrior');"
         try {
-            console.log(sql);
             const client = await conn.getConn().connect();
             // resultado de la peticion a la base de datos
             const result = await client.query(sql)
-            // termino de cenxion 
+            // termino de conexion 
             client.release()
             //retornamos los datos 
             return result.rows
