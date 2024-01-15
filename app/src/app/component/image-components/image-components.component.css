@@ -4,6 +4,11 @@
     height: 300px;
 }
 
+.unique-image-cont{
+    display: flex;
+    justify-content: center;
+}
+
 .img-container{
     height: auto;
     width: 100%;

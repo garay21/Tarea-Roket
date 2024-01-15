@@ -15,7 +15,6 @@ class TreeController {
         try {
             const treeID = props.req.params.id;
             const tree = await treeModel.getTree(treeID)
-            console.log(tree);
             res.json(tree)
         } catch (error) {
             console.log('error al obtener datos !!', error);
