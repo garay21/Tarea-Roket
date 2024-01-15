@@ -1,0 +1,16 @@
+.unique-image {
+    border-radius: 8%;
+    width: 200px;
+    height: 300px;
+}
+
+.img-container{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(200px,1fr)
+    );
+    gap:2%;
+}

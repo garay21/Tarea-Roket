@@ -1,9 +1,15 @@
-<div class="select-container">
-    <div class="input-group">
-        <label for="">Selecciona un árbol para ver sus detalles. </label>
-        <select class="" name="" id="">
-            <option value="0">Selecciona un árbol. </option>
-            <option value="1">chileno</option>
-        </select>
+<section class="main-container">
+    <div class="select-container">
+        <div class="input-group">
+            <label class="input-title" for="">Selecciona un árbol para ver sus detalles. </label>
+            <select class="select-tree" [(ngModel)]="selected" (change)="getTreeDetails()">
+                <option *ngFor="let tree of trees" value={{tree.arbol_id}}>{{tree.nombre_arbol}}</option>
+            </select>
+        </div>
     </div>
-</div>
+
+    <div class="is_data" *ngIf="treeImage.length > 0">
+        <app-image-components [dataIMG]="treeImage"></app-image-components>
+    </div>
+    <app-map-components [locate]="treeLocation"></app-map-components>
+</section>

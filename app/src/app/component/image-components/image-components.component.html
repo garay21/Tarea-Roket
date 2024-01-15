@@ -1,1 +1,5 @@
-<p>image-components works!</p>
+<div class="img-container">
+    <div class="unique-image-cont" *ngFor="let img of dataIMG">
+        <img class="unique-image" [src]="img" alt="Image">
+    </div>
+</div>

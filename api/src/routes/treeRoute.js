@@ -5,6 +5,7 @@ const TreeController = require('../controllers /treeController.js')
 const TreeRoute = new Router()
 
 // ruta para obtener los detalles de los arboles en general
-TreeRoute.get('/arboles',TreeController.getT)
+TreeRoute.get('/api/arboles',TreeController.getTrees)
+TreeRoute.get('/api/arboles/:id',TreeController.getTree)
 
 module.exports = TreeRoute
