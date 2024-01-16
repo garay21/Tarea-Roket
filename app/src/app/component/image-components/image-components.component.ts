@@ -6,5 +6,5 @@ import { Component, Input} from '@angular/core';
   styleUrl: './image-components.component.css'
 })
 export class ImageComponentsComponent {
-  @Input() dataIMG: any;
+  @Input() dataIMG: any; // arreglo de datos con las url de las imagenes
 }

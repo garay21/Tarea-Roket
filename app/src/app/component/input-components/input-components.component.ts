@@ -7,16 +7,17 @@ import { TreeService } from '../../service/tree.service';
   styleUrl: './input-components.component.css'
 })
 export class InputComponentsComponent implements OnInit{
-    trees : any[] = [];
-    treeImage : any[] = [];
-    treeComments : any[] = [];
-    treeLocation : any[] = [];
-    selected : any;
+    trees : any[] = []; //arreglo de arboles consumidos. 
+    treeImage : any[] = []; // arreglo para las imagenes.
+    treeComments : any[] = []; // arreglo para los comentarios. 
+    treeLocation : any[] = []; // arreglo para la locacion.
+    selected : any; // variable para guardar la id del arbol seleccionado.
 
     constructor(private treeService : TreeService){
 
     }
 
+    //hook para el inicio del DOM
     ngOnInit(): void {
         this.treeService.getAllTrees().subscribe(
           (data) => {
@@ -24,6 +25,7 @@ export class InputComponentsComponent implements OnInit{
           })
     }
 
+    // funcion para extraer los datos y detalles del arbol selecionado 
     getTreeDetails(){
         console.log(this.selected);
         this.treeImage = []

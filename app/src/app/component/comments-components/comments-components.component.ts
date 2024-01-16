@@ -10,6 +10,7 @@ import { TreeService } from '../../service/tree.service';
 export class CommentsComponentsComponent {
   @Input() arbolId: any;
 
+  //modelo para agregar los datos del comentario segun postulante y arbol seleccionado
   data = {
     arbol_id: '',
     postulante_id: '19041505-8',
@@ -18,6 +19,7 @@ export class CommentsComponentsComponent {
 
   constructor(private treeService: TreeService) { }
 
+  //funcion para enviar el comentario
   submitForm(){
     this.data.arbol_id = this.arbolId;
     this.treeService.addComnent(this.data).subscribe(
