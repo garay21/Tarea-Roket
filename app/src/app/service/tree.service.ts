@@ -21,4 +21,8 @@ export class TreeService {
   getTree(id : number): Observable<any[]> {
     return this.http.get<any>(this.apiUrl + '/arboles/'+ id);
   }
+
+  addComnent(data : any): Observable<any[]> {
+    return this.http.post<any>(this.apiUrl + '/addComment',data);
+  }
 }

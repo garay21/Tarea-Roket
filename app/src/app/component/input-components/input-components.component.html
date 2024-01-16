@@ -10,6 +10,7 @@
 
     <div class="is_data" *ngIf="treeImage.length > 0">
         <app-image-components [dataIMG]="treeImage"></app-image-components>
+        <app-map-components [locate]="treeLocation"></app-map-components>
+        <app-comments-components [arbolId]="selected"></app-comments-components>
     </div>
-    <app-map-components [locate]="treeLocation"></app-map-components>
 </section>

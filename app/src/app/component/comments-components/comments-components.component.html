@@ -1,7 +1,7 @@
 <div class="comments-container">
-    <form>
+    <form (ngSubmit)="submitForm()">
         <label for="">Algun comentario ?</label>
-        <input type="text" name="" id="" placeholder="Ingrese cualquier comentario necesario.">
+        <input type="text" name="comment" id="" placeholder="Ingrese cualquier comentario necesario." required [(ngModel)]="data.comentario">
         <button type="submit">Enviar</button>
     </form>
 </div>
